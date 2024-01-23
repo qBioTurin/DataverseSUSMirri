@@ -1,0 +1,4 @@
+#metadataBlock	name	dataverseAlias	displayName
+	strains		Strains Metadata
+#datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	displayoncreate	required	parent	metadatablock_id	termURI
+	accessionNumberMirri	
