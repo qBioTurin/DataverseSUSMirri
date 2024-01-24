@@ -1,6 +1,5 @@
 #metadataBlock	name	dataverseAlias	displayName
 	strains		Strains Metadata
-
 #datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	displayoncreate	required	parent	metadatablock_id	termURI
 	accessionNumberMirri	Accession Number	Unique identifier of the strain in the CC. CC acronym followed by a space character and a number or code. If a code is used, it cannot include spaces. If the current accession number is not compliant with the new rule, it must be redefined. In this case, the previous number must be included in the OtherCCNumbers column.		text	0		TRUE	FALSE	FALSE	FALSE	TRUE	TRUE		strains	
 	organismTypeMirri	Organism Type	One of the following terms: Algae, Archaea, Bacteria, Cyanobacteria, Filamentous Fungi, Yeasts, Microalgae.		text	1		TRUE	TRUE	FALSE	TRUE	TRUE	TRUE		strains	
@@ -10,7 +9,17 @@
 	useRestrictionsMirri	Use Restrictions	Report if the strain can be used for commercial development or not. One of the following values: 1, 2, 3. 1 is for “No known restrictions apply”, 2 is for “Only for non-commercial purposes”, 3 is for “For commercial development a special agreement is requested”.		text	5		TRUE	FALSE	FALSE	FALSE	TRUE	TRUE		strains	
 	nagoyaConditionsMirri	Nagoya Conditions	Situation of the strain in relation to the Nagoya protocol. Mandatory if BeforeNagoya (column E) is ‘No’. One of the following values: 1, 2, 3. 1 is for  “No known restrictions under the Nagoya protocol”, 2 is for “Documents providing proof of legal access and terms of use available at the collection”, 3 is for “Strain probably in scope, please contact the culture collection”.		text	6		TRUE	FALSE	FALSE	FALSE	TRUE	FALSE		strains	
 	riskGroupMirri	Risk Group	Risk group according to EU Directive 2000/54/EC and its amendments and corrections. Mandatory if the species is known. One of the allowed values: 1, 2, 3, 4.		text	7		TRUE	FALSE	FALSE	FALSE	TRUE	FALSE		strains	
-
+	formOfSupply	Form Of Supply	The forms of supply of the strain to users. One or several of the allowed values, separated by a “;”. Currently, allowed values are: Agar, Cryo, Dry Ice, Liquid Culture Medium, Lyo, Oil, Water. If necessary, other allowed values can be added.		text	8		TRUE	TRUE	TRUE	FALSE	TRUE	TRUE		strains	
+	recommendedMediumGrowth	Recommended Medium Growth	The acronym of the growth medium that must be described in a separate sheet (Sheet GrowthMedia). When there are more recommended media, please use “;” to separate.		text	9		FALSE	FALSE	TRUE	FALSE	TRUE	FALSE		strains	
+	recommendedTempGrowth	Recommended Temp Growth	The recommended growing temperature for the strain. The temperature is expressed as an integer number in Celsius degrees. The symbol ° and the letter C must not be included.		float	10		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE		strains	
+	euQuarantine	EU Quarantine	The attribute specifies whether the strain is subject to quarantine according to the European Directive 2000/29/CE and its amendments and corrections. The list of quarantine organisms is available in the Commission Implementing Regulation (EU) 2019/2072. Mandatory if the species is known. Allowed values are Yes and No.		text	11		TRUE	FALSE	FALSE	FALSE	TRUE	FALSE		strains	
+	gmo	GMO	The attribute specifies whether the strain is a GMO (Genetically Modified Organism). Allowed values are Yes and No.		text	12		TRUE	FALSE	FALSE	FALSE	TRUE	TRUE		strains	
+	gmoConstructionInfo	GMO Construction Info	Information on the construction of the GMO. This information, which can be provided as free text, is mandatory for strains with GMO=Yes, while it must be missing for strains with GMO=No.		text	13		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE		strains	
+	dualUse	Dual Use	The attribute specifies whether the strain has the potential for a harmful use according to EU Council Regulation 2000/1334/CE and its amendments and corrections. Mandatory if the species is known. Allowed values are Yes and No.		text	14		TRUE	FALSE	FALSE	FALSE	TRUE	FALSE		strains	
+	sexualState	Sexual State	The attribute specifies Information on strain sexual state / mating type, for relevant resource types. Allowed values are: Mata, Matalpha, Mata/Matalpha, Matb, Mata/Matb, MTLa, MTLalpha, MTLa/MTLalpha, MAT1-1, MAT1-2, MAT1, MAT2, MT+, MT-		text	15		TRUE	TRUE	FALSE	FALSE	TRUE	FALSE		strains	
+	testedTempGrowthRange	Tested Temp Growth Range	The attribute specifies the lowest and the highest temperature at which the strain was tested for growing. Temperatures are expressed as integer numbers in Celsius degrees and must be separated by a semicolon. The symbol ° and the letter C should not be included.		none	16		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE		strains
+	minTestedTempGrowthRange	Minimum Tested Temp Growth Range			float	0		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	testedTempGrowthRange	strains	
+	maxTestedTempGrowthRange	Maximum Tested Temp Growth Range			float	1		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	testedTempGrowthRange	strains	
 #controlledVocabulary	DatasetField	Value	identifier	displayOrder
 	organismTypeMirri	Algae	organismAlgae	0
 	organismTypeMirri	Archaea	organismArchaea	1
@@ -19,3 +28,24 @@
 	organismTypeMirri	Filamentous Fungi	organismFilamentousFungi	4
 	organismTypeMirri	Yeasts	organismYeasts	5
 	organismTypeMirri	Microalgae	organismMicroalgae	6
+	formOfSupply	Agar	supplyAgar	0
+	formOfSupply	Cryo	supplyCryo	1
+	formOfSupply	Dry Ice	supplyDryIce	2
+	formOfSupply	Liquid Culture Medium	supplyLiquidCultureMedium	3
+	formOfSupply	Lyo	supplyLyo	4
+	formOfSupply	Oil	supplyOil	5
+	formOfSupply	Water	supplyWater	6
+	sexualState	Mata	sexualStateMata	0
+	sexualState	Matalpha	sexualStateMatalpha	1
+	sexualState	Mata/Matalpha	sexualStateMataMatalpha	2
+	sexualState	Matb	sexualStateMatb	3
+	sexualState	Mata/Matb	sexualStateMataMatb	4
+	sexualState	MTLa	sexualStateMTLa	5
+	sexualState	MTLalpha	sexualStateMTLalpha	6
+	sexualState	MTLa/MTLalpha	sexualStateMTLaMTLalpha	7
+	sexualState	MAT1-1	sexualStateMAT1-1	8
+	sexualState	MAT1-2	sexualStateMAT1-2	9
+	sexualState	MAT1	sexualStateMata	10
+	sexualState	MAT2	sexualStateMata	11
+	sexualState	MT+	sexualStateMT+	12
+	sexualState	MT-	sexualStateMT-	13
