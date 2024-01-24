@@ -1,4 +1,21 @@
 #metadataBlock	name	dataverseAlias	displayName
 	strains		Strains Metadata
+
 #datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	displayoncreate	required	parent	metadatablock_id	termURI
-	accessionNumberMirri	
+	accessionNumberMirri	Accession Number	Unique identifier of the strain in the CC. CC acronym followed by a space character and a number or code. If a code is used, it cannot include spaces. If the current accession number is not compliant with the new rule, it must be redefined. In this case, the previous number must be included in the OtherCCNumbers column.		text	0		TRUE	FALSE	FALSE	FALSE	TRUE	TRUE		strains	
+	organismTypeMirri	Organism Type	One of the following terms: Algae, Archaea, Bacteria, Cyanobacteria, Filamentous Fungi, Yeasts, Microalgae.		text	1		TRUE	TRUE	FALSE	TRUE	TRUE	TRUE		strains	
+	genusMirri	Genus	The genus of the strain.		text	2		TRUE	FALSE	FALSE	FALSE	TRUE	TRUE		strains	
+	speciesMirri	Species	The species of the strain followed, when appropriate, by the subspecies name. For hybrid strains, more than one species can be specified. The semicolon “;” must be used as a separation character.		text	3		TRUE	FALSE	TRUE	FALSE	TRUE	FALSE		strains	
+	beforeNagoyaMirri	Before Nagoya	The attribute specifies whether the strain has been collected before 12 October 2014. Allowed values are Yes and No.		text	4		TRUE	FALSE	FALSE	FALSE	TRUE	TRUE		strains	
+	useRestrictionsMirri	Use Restrictions	Report if the strain can be used for commercial development or not. One of the following values: 1, 2, 3. 1 is for “No known restrictions apply”, 2 is for “Only for non-commercial purposes”, 3 is for “For commercial development a special agreement is requested”.		text	5		TRUE	FALSE	FALSE	FALSE	TRUE	TRUE		strains	
+	nagoyaConditionsMirri	Nagoya Conditions	Situation of the strain in relation to the Nagoya protocol. Mandatory if BeforeNagoya (column E) is ‘No’. One of the following values: 1, 2, 3. 1 is for  “No known restrictions under the Nagoya protocol”, 2 is for “Documents providing proof of legal access and terms of use available at the collection”, 3 is for “Strain probably in scope, please contact the culture collection”.		text	6		TRUE	FALSE	FALSE	FALSE	TRUE	FALSE		strains	
+	riskGroupMirri	Risk Group	Risk group according to EU Directive 2000/54/EC and its amendments and corrections. Mandatory if the species is known. One of the allowed values: 1, 2, 3, 4.		text	7		TRUE	FALSE	FALSE	FALSE	TRUE	FALSE		strains	
+
+#controlledVocabulary	DatasetField	Value	identifier	displayOrder
+	organismTypeMirri	Algae	organismAlgae	0
+	organismTypeMirri	Archaea	organismArchaea	1
+	organismTypeMirri	Bacteria	organismBacteria	2
+	organismTypeMirri	Cyanobacteria	organismCyanobacteria	3
+	organismTypeMirri	Filamentous Fungi	organismFilamentousFungi	4
+	organismTypeMirri	Yeasts	organismYeasts	5
+	organismTypeMirri	Microalgae	organismMicroalgae	6
