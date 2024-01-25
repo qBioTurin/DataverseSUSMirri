@@ -16,3 +16,10 @@ In the machine which has solr installed:
 scp $DATAVERSE_MACHINE:/dataverse/dvinstall/schema.xml /dataverseDB/solr/solr-9.3.0/server/solr/collection1/conf/schema.xml 
 curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=collection1" | jq
 ```
+
+## Data Insertion
+Build the container and test it using:
+```
+docker run scontaldo/datainsertion python3 main.py /metadata.json /results
+```
+Add shared volume to upload your own data.
