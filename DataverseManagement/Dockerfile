@@ -16,11 +16,7 @@ RUN pip3 install pyDataverse
 WORKDIR /
 
 # copy data
-COPY dataverse_controller.py /
-COPY main.py /
-COPY downloadDataset.py /
-COPY json_parser.py /
-COPY constant.py /
+COPY script /script
 COPY results /results 
 COPY metadata.json / 
 COPY dataverse.json /

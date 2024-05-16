@@ -1,5 +1,5 @@
 from dataverse_controller import DataverseController
-import constant
+import constant as constant
 import sys
 
 dataverse_controller = DataverseController(constant.base_url, constant.token)
