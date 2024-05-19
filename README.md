@@ -17,9 +17,4 @@ scp $DATAVERSE_MACHINE:/dataverse/dvinstall/schema.xml /dataverseDB/solr/solr-9.
 curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=collection1" | jq
 ```
 
-## Data Insertion
-Build the container and test it using:
-```
-docker run scontaldo/datainsertion python3 main.py /metadata.json /results
-```
-Add shared volume to upload your own data.
+## Dataverse management

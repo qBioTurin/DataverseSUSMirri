@@ -1,29 +1,43 @@
-from dataverse_controller import DataverseController
-from json_parser import Json
-import json
-import constant as constant
+import argparse
+import mainOperations.create_dataverse as create_dataverse
+import mainOperations.create_dataset as create_dataset
+import mainOperations.download_dataset as download_dataset
 import sys
 
-if __name__ == "__main__":
-    dataverse = 'Root'
-    dataverse_controller = DataverseController(constant.base_url, constant.token)
+def createDataverse(params):
+    parser = argparse.ArgumentParser(description="Create a dataverse in a dataverse instance.")
+    parser.add_argument('--dataverse', required=True, help='Dataverse Json file')
     
-    # print(dataverse_controller.create_dataverse())
+    args = parser.parse_args(params)
+    create_dataverse.createDataverse(args)
 
-    #results_api = api_caller.rest_get('https://susmirri-mbrcapi.di.unito.it/strains')
-    json_file = sys.argv[1]
-    results_dir = sys.argv[2]
+def createDataset(params):
+    parser = argparse.ArgumentParser(description="Extract data from a json file and create a dataset in a dataverse instance.")
+    parser.add_argument('--json', required=True, help='Json file')
+    parser.add_argument('--datafile_dir', required=False, help='Datafile directory')
+    parser.add_argument('--dataverse', required=True, help='Dataverse name')
+    
+    args = parser.parse_args(params)
+    create_dataset.createDataset(args)
+    
+def downloadDataset(params):
+	parser = argparse.ArgumentParser(description="Download a dataset from a dataverse instance.")
+	parser.add_argument('--DOI', required=True, help='DOI of the dataset')
+	parser.add_argument('--outdir', required=True, help='Datafile directory')
+	
+	args = parser.parse_args(params)
+	download_dataset.downloadDataset(args)
+	
 
-    with open(json_file, 'r') as file:
-        values = json.load(file)
-        
-    # dataverse_controller.download_datafile('doi:10.5072/FK2/BZNQCE', results_dir)
+if __name__ == "__main__":
+    command = sys.argv[1] if len(sys.argv) > 1 else "help"
+    params = sys.argv[2:]
 
-    json = Json(values)
-    #json.add_strain(results_api[0])
-    json.parsing_dataset()
-    #json.save_json(True)
-    ds_pid = dataverse_controller.create_dataset(dataverse, json.save_json())
-    dataverse_controller.add_datafile_to_dataset(ds_pid, results_dir)
-    #dataverse_controller.publish_dataset(ds_pid, 'major')
-
+    if command == "createDataverse":
+        createDataverse(params)
+    elif command == "createDataset":
+        createDataset(params)
+    elif command == "downloadDataset":
+        downloadDataset(params)
+    else:
+        print("Command not found")

@@ -4,6 +4,12 @@ import json
 def create_value_dict(value, multiple, type_class, type_name):
     return {'value': value, 'multiple': multiple, 'typeClass': type_class, 'typeName': type_name}
 
+def json_to_file(json_data, filename):
+    json_file = json.dumps(json_data, indent=2)
+    
+    with open(filename, 'w') as file:
+        file.writelines(json_file)
+    
 
 # This class provides utility functions to work with Json
 # 1. __init__(self, values): initialize the Json object using a dictionary called values

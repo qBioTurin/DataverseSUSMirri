@@ -17,6 +17,8 @@ WORKDIR /
 
 # copy data
 COPY script /script
-COPY results /results 
-COPY metadata.json / 
-COPY dataverse.json /
+# COPY results /results 
+# COPY metadata.json / 
+# COPY dataverse.json /
+
+ENTRYPOINT ["python3", "/script/main.py"]

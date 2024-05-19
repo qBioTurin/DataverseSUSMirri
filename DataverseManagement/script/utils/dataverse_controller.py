@@ -2,6 +2,7 @@ from pyDataverse.api import NativeApi, DataAccessApi
 from pyDataverse.models import Datafile, Dataverse
 from pyDataverse.utils import read_file
 import os
+from utils.json_parser import json_to_file
 
 
 # This class is a controller for Dataverse
@@ -16,13 +17,24 @@ class DataverseController:
         self.api = NativeApi(self.base_url, self.token)
         self.data_api = DataAccessApi(self.base_url, self.token)  # Init a Data Access to the API
 
-    def create_dataverse(self):
+    # def create_dataverse(self):
+    #     dv = Dataverse()
+    #     dv_filename = "./dataverse.json"
+    #     dv.from_json(read_file(dv_filename))
+    #     resp = self.api.create_dataverse(":root", dv.json())
+    #     resp = self.api.publish_dataverse("pyDataverse_user-guide")
+    #     resp = self.api.get_dataverse("pyDataverse_user-guide")
+        
+    #     return resp.json()
+    
+    def create_dataverse(self, dv_filename):
         dv = Dataverse()
-        dv_filename = "./dataverse.json"
+        # dv_filename = "./dataverse.json"
         dv.from_json(read_file(dv_filename))
+        #TODO check where to create the dataverse
         resp = self.api.create_dataverse(":root", dv.json())
-        resp = self.api.publish_dataverse("pyDataverse_user-guide")
-        resp = self.api.get_dataverse("pyDataverse_user-guide")
+        # resp = self.api.publish_dataverse("pyDataverse_user-guide")
+        # resp = self.api.get_dataverse("pyDataverse_user-guide")
         
         return resp.json()
 
@@ -44,18 +56,16 @@ class DataverseController:
         print(self.api.get_dataset(DOI).json())
         return self.api.get_dataset(DOI)
         
-    def download_datafile(self, DOI, results_dir):
-        # files_list = self.get_dataset(DOI).json()['data']['latestVersion']['files']
-        # for file in files_list:
-        #     filename = file["dataFile"]["filename"]
-        #     file_id = file["dataFile"]["id"]
-        #     print("File name {}, id {}".format(filename, file_id))
-        #     response = self.data_api.get_datafile(DOI)
-        #     print(response)
-        #     with open(f'{results_dir}/{filename}', "wb") as f:
-        #         f.write(response.content)
-        os.system(f'curl -L -O -J -H "X-Dataverse-key:{self.token}" {self.base_url}/api/access/dataset/:persistentId/?persistentId={DOI}')
-        os.system(f'mv dataverse_files.zip {results_dir}')
+    def download_dataset(self, DOI, results_dir):
+        resp = self.api.get_dataset(DOI)
+        if resp.json()['status'] != 'OK':
+            print(resp.json()['message'])
+            return
+        json_to_file(resp.json()['data']['latestVersion'], f'dataverse_metadata.json')
+        os.system(f'mv dataverse_metadata.json {results_dir}')
+        if (resp.json()['data']['latestVersion']['files'] != []):
+            os.system(f'curl -L -O -J -H "X-Dataverse-key:{self.token}" {self.base_url}/api/access/dataset/:persistentId/?persistentId={DOI}')
+            os.system(f'mv dataverse_files.zip {results_dir}')
     
     def publish_dataset(self, DOI, release_type='major'):
         return self.api.publish_dataset(DOI, release_type=release_type)
