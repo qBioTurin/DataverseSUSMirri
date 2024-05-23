@@ -2,6 +2,8 @@ import argparse
 import mainOperations.create_dataverse as create_dataverse
 import mainOperations.create_dataset as create_dataset
 import mainOperations.download_dataset as download_dataset
+import mainOperations.add_datafile_dataset as add_datafile_dataset
+import mainOperations.remove_datafile_dataset as remove_datafile_dataset
 import sys
 
 def createDataverse(params):
@@ -27,8 +29,23 @@ def downloadDataset(params):
 	
 	args = parser.parse_args(params)
 	download_dataset.downloadDataset(args)
+    
+def addDatafileToDataset(params):
+	parser = argparse.ArgumentParser(description="Add file to a dataset.")
+	parser.add_argument('--DOI', required=True, help='DOI of the dataset')
+	parser.add_argument('--datafile_dir', required=True, help='Datafile directory')
 	
-
+	args = parser.parse_args(params)
+	add_datafile_dataset.addDatafileToDataset(args)
+     
+def removeDatafileFromDataset(params):
+	parser = argparse.ArgumentParser(description="Remove a file from a dataset.")
+	parser.add_argument('--DOI', required=True, help='DOI of the dataset')
+	parser.add_argument('--file_name', required=True, help='File name')
+	
+	args = parser.parse_args(params)
+	remove_datafile_dataset.removeDatafileFromDataset(args)
+	
 if __name__ == "__main__":
     command = sys.argv[1] if len(sys.argv) > 1 else "help"
     params = sys.argv[2:]
@@ -39,5 +56,9 @@ if __name__ == "__main__":
         createDataset(params)
     elif command == "downloadDataset":
         downloadDataset(params)
+    elif command == "addDatafileToDataset":
+        addDatafileToDataset(params)
+    elif command == "removeDatafileFromDataset":
+        removeDatafileFromDataset(params)
     else:
         print("Command not found")

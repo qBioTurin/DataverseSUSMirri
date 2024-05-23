@@ -66,7 +66,6 @@ class Json:
                 'displayName': 'Citation Metadata'}
 
     # TODO it is possible to generalize this method in order to add strains only if there are strains parameters
-    # TODO "metadataLanguage" is equal "mi" but we need to fix this parameters
     def parsing_dataset(self):
         # metadata_block = {'citation': self.citation_metadata(), 'strains': self.strains_metadata()}
         metadata_block = {'citation': self.citation_metadata()}

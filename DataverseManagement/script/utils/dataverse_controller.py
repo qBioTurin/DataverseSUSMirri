@@ -16,16 +16,6 @@ class DataverseController:
         self.token = token
         self.api = NativeApi(self.base_url, self.token)
         self.data_api = DataAccessApi(self.base_url, self.token)  # Init a Data Access to the API
-
-    # def create_dataverse(self):
-    #     dv = Dataverse()
-    #     dv_filename = "./dataverse.json"
-    #     dv.from_json(read_file(dv_filename))
-    #     resp = self.api.create_dataverse(":root", dv.json())
-    #     resp = self.api.publish_dataverse("pyDataverse_user-guide")
-    #     resp = self.api.get_dataverse("pyDataverse_user-guide")
-        
-    #     return resp.json()
     
     def create_dataverse(self, dv_filename):
         dv = Dataverse()
@@ -53,7 +43,7 @@ class DataverseController:
         
     def get_dataset(self, DOI):
         #TODO crea un file json con i dati del dataset
-        print(self.api.get_dataset(DOI).json())
+        # print(self.api.get_dataset(DOI).json())
         return self.api.get_dataset(DOI)
         
     def download_dataset(self, DOI, results_dir):
@@ -76,8 +66,32 @@ class DataverseController:
             df_filename = f'{results_dir}/{file}' 
             df.set({"pid": DOI, "filename": df_filename})
             resp = self.api.upload_datafile(DOI, df_filename, df.json())
+            
+            print(resp.json())
 
         #TODO change return
 
         return resp.json()
+    
+    def remove_datafile_from_dataset(self, DOI, file_name):
+        files = self.get_dataset(DOI).json()['data']['latestVersion']['files']
+        file_found = False
+        for file in files:
+            if file['label'] == file_name:
+                file_id = file['dataFile']['id']
+                os.system(f'curl -H "X-Dataverse-key:{self.token}" -X DELETE "{self.base_url}/api/files/{file_id}"')
+                file_found = True
+        if not file_found:
+            print('File not found')
+        return 
+    
+    # def update_dataset(self, DOI, json):
+    #     dataset = self.get_dataset(DOI)
+    #     dataset = dataset.json()['metadataBlocks']
+        
+    #     os.system(f'curl -H "X-Dataverse-key:{self.token}" -X PUT "{self.base_url}/api/datasets/:persistentId/versions/:draft?persistentId=doi:{DOI}" --upload-file {json}')
+    #     return
+    
+        
+
 

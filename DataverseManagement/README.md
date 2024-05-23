@@ -22,6 +22,7 @@ docker run -v path/to/json/dir:/data dataversemanagement createDataverse --datav
 ```
 
 ### Create dataset
+
 To create and upload a dataset its metadata json is needed. The format is as follow:
 ```
 {
@@ -47,4 +48,18 @@ If you need to upload files within the dataset, use the `--datafile_dir` paramet
 To download metadata and any files associated with a dataset, use the following command:
 ```
 docker run -v path/to/output/dir:/output dataversemanagement downloadDataset --DOI DOI --outdir /output
+```
+
+### Add datafile to dataset
+
+To add a file from a dataset, place all your files in a directory and use the command:
+```
+docker run -v path/to/file/dir:/files dataversemanagement addDatafileToDataset --DOI DOI --datafile_dir /files
+```
+
+### Remove datafile from dataset
+
+To remove a file from a dataset use the following command:
+```
+docker run dataversemanagement removeDatafileFromDataset --DOI DOI --file_name FILENAME
 ```
