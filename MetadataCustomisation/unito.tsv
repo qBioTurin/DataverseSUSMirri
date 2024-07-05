@@ -1,0 +1,32 @@
+#metadataBlock	name	dataverseAlias	displayName
+	unito		UNITO Metadata
+#datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	displayoncreate	required	parent	metadatablock_id	termURI
+	ERC	ERC	European Research Council		text	0		TRUE	TRUE	FALSE	TRUE	TRUE	TRUE		unito
+#controlledVocabulary	DatasetField	Value	identifier	displayOrder
+	ERC	SH1_1 Macroeconomics; monetary economics; economic growth	SH1_1	0
+	ERC	SH1_2 International management; international trade; international business; spatial economics	SH1_2	1
+	ERC	SH1_3 Development economics, health economics, education economics	SH1_3	2
+	ERC	SH1_4 Financial economics; banking; corporate finance; international finance; accounting; auditing; insurance	SH1_4	3
+	ERC	SH1_5 Labour and demographic economics; human resource management	SH1_5	4
+	ERC	SH1_6 Econometrics; operations research	SH1_6	5
+	ERC	SH1_7 Behavioural economics; experimental economics; neuro-economics	SH1_7	6
+	ERC	SH1_8 Microeconomics; game theory	SH1_8	7
+	ERC	SH1_9 Industrial organisation; strategy; entrepreneurship	SH1_9	8
+	ERC	SH1_10 Management; marketing; organisational behaviour; operations management	SH1_10	9
+	ERC	SH1_11 Technological change, innovation, research & development	SH1_11	10
+	ERC	SH1_12 Agricultural economics; energy economics; environmental economics	SH1_12	11
+	ERC	SH1_13 Public economics; political economics; law and economics	SH1_13	12
+	ERC	SH1_14 Competition law, contract law, trade law, Intellectual Property Rights	SH1_14	13
+	ERC	SH1_15 Quantitative economic history and history of economics; institutional economics; economic systems	SH1_15	14
+	ERC	SH2_1 Political systems, governance	SH2_1	15
+	ERC	SH2_2 Democratisation and social movements	SH2_2	16
+	ERC	SH2_3 Conflict resolution, war, peace building	SH2_3	17
+	ERC	SH2_4 Constitutions, human rights, comparative law, humanitarian law, anti-discrimination law	SH2_4	18
+	ERC	SH2_5 International relations, global and transnational governance	SH2_5	19
+	ERC	SH2_6 Sustainability sciences, environment and resources	SH2_6	20
+	ERC	SH2_7 Environmental and climate change, societal impact and policy	SH2_7	21
+	ERC	SH2_8 Energy, transportation and mobility	SH2_8	22
+	ERC	SH2_9 Urban, regional and rural studies	SH2_9	23
+	ERC	SH2_10 Land use and regional planning	SH2_10	24
+	ERC	SH2_11 Human, economic and social geography	SH2_11	25
+	ERC	SH2_12 GIS, spatial analysis; big data in political, geographical and legal studies	SH2_12	26
