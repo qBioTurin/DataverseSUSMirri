@@ -3,8 +3,7 @@
 ## Metadata Customisation
 Copy the metadatablock file that you want to add in your Dataverse installation into the data/metadablock directory of Dataverse. Here use the following command:
 ```
-curl http://localhost:8080/api/admin/datasetfield/load -H "Content-type: text
-tab-separated-values" -X POST --upload-file $FILE_NAME
+curl http://localhost:8080/api/admin/datasetfield/load -H "Content-type: text/tab-separated-values" -X POST --upload-file $FILE_NAME
 ```
 Then update the Solr schema.xml file stored in the Dataverse root directory:
 ```

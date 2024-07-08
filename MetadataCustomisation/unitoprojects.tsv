@@ -1,0 +1,15 @@
+#metadataBlock	name	dataverseAlias	displayName
+	unitoProjects		UNITO Projects Metadata
+#datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	displayoncreate	required	parent	metadatablock_id	termURI
+	susmirri	SUS-MIRRI.IT	SUS-MIRRI.IT project metadata		text	0		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		unitoProjects
+	accessionNumberSUSMirri	Accession Number	Unique identifier of the strain in the CC.		text	0		TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	organismTypeSUSMirri	Organism Type	The organism type of the microorganism		text	1		TRUE	TRUE	FALSE	TRUE	FALSE	FALSE	susmirri	unitoProjects
+	genusSUSMirri	Genus	The genus of the strain.		text	2		TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+#controlledVocabulary	DatasetField	Value	identifier	displayOrder
+	organismTypeSUSMirri	Algae	organismAlgaeSUSMirri	0
+	organismTypeSUSMirri	Archaea	organismArchaeaSUSMirri	1
+	organismTypeSUSMirri	Bacteria	organismBacteriaSUSMirri	2
+	organismTypeSUSMirri	Cyanobacteria	organismCyanobacteriaSUSMirri	3
+	organismTypeSUSMirri	Filamentous Fungi	organismFilamentousFungiSUSMirri	4
+	organismTypeSUSMirri	Yeasts	organismYeastsSUSMirri	5
+	organismTypeSUSMirri	Microalgae	organismMicroalgaeSUSMirri	6
