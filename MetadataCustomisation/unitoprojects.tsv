@@ -6,11 +6,36 @@
 	organismTypeSUSMirri	Organism Type	The organism type of the microorganism		text	1	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	TRUE	FALSE	FALSE	susmirri	unitoProjects
 	genusSUSMirri	Genus	The genus of the strain.		text	2	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 	speciesSUSMirri	Species	The species of the strain followed, when appropriate, by the subspecies name. For hybrid strains, more than one species can be specified. The semicolon “;” must be used as a separation character.		text	3	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	beforeNagoyaSUSMirri	Before Nagoya	The attribute specifies whether the strain has been collected before 12 October 2014.		text	4	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	useRestrictionsSUSMirri	Use Restrictions	Report if the strain can be used for commercial development or not.		text	5	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	nagoyaConditionsSUSMirri	Nagoya Conditions	Situation of the strain in relation to the Nagoya protocol. Mandatory if BeforeNagoya is ‘No’.		text	6	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	riskGroupSUSMirri	Risk Group	Risk group according to EU Directive 2000/54/EC and its amendments and corrections. Mandatory if the species is known.		text	7	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	formOfSupplySUSMirri	Form Of Supply	The forms of supply of the strain to users.		text	8	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	TRUE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	recommendedMediumGrowthSUSMirri	Recommended Medium Growth	The acronym of the growth medium.		text	9	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	TRUE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 #controlledVocabulary	DatasetField	Value	identifier	displayOrder
-	organismTypeSUSMirri	Algae	organismAlgaeSUSMirri	0
-	organismTypeSUSMirri	Archaea	organismArchaeaSUSMirri	1
-	organismTypeSUSMirri	Bacteria	organismBacteriaSUSMirri	2
-	organismTypeSUSMirri	Cyanobacteria	organismCyanobacteriaSUSMirri	3
-	organismTypeSUSMirri	Filamentous Fungi	organismFilamentousFungiSUSMirri	4
-	organismTypeSUSMirri	Yeasts	organismYeastsSUSMirri	5
-	organismTypeSUSMirri	Microalgae	organismMicroalgaeSUSMirri	6
+	organismTypeSUSMirri	Algae	organismTypeSUSMirri_Algae	0
+	organismTypeSUSMirri	Archaea	organismTypeSUSMirri_Archaea	1
+	organismTypeSUSMirri	Bacteria	organismTypeSUSMirri_Bacteria	2
+	organismTypeSUSMirri	Cyanobacteria	organismTypeSUSMirri_Cyanobacteria	3
+	organismTypeSUSMirri	Filamentous Fungi	organismTypeSUSMirri_FilamentousFungi	4
+	organismTypeSUSMirri	Yeasts	organismTypeSUSMirri_Yeasts	5
+	organismTypeSUSMirri	Microalgae	organismTypeSUSMirri_Microalgae	6
+	beforeNagoyaSUSMirri	Yes	beforeNagoyaSUSMirri_Yes	0
+	beforeNagoyaSUSMirri	No	beforeNagoyaSUSMirri_No	1
+	useRestrictionsSUSMirri	No known restrictions apply	useRestrictions_1	0
+	useRestrictionsSUSMirri	Only for non-commercial purposes	useRestrictions_2	1
+	useRestrictionsSUSMirri	For commercial development a special agreement is requested	useRestrictions_3	2
+	nagoyaConditionsSUSMirri	No known restrictions under the Nagoya protocol	nagoyaConditions_1	0
+	nagoyaConditionsSUSMirri	Documents providing proof of legal access and terms of use available at the collection	nagoyaConditions_2	1
+	nagoyaConditionsSUSMirri	Strain probably in scope, please contact the culture collection	nagoyaConditions_3	2
+	riskGroupSUSMirri	1	riskGroup_1	0
+	riskGroupSUSMirri	2	riskGroup_1	1
+	riskGroupSUSMirri	3	riskGroup_1	2
+	riskGroupSUSMirri	4	riskGroup_1	3
+	formOfSupplySUSMirri	Agar	formOfSupplySUSMirri_Agar	0
+	formOfSupplySUSMirri	Cryo	formOfSupplySUSMirri_Cryo	1
+	formOfSupplySUSMirri	Dry Ice	formOfSupplySUSMirri_DryIce	2
+	formOfSupplySUSMirri	Liquid Culture Medium	formOfSupplySUSMirri_LiquidCultureMedium	3
+	formOfSupplySUSMirri	Lyo	formOfSupplySUSMirri_Lyo	4
+	formOfSupplySUSMirri	Oil	formOfSupplySUSMirri_Oil	5
+	formOfSupplySUSMirri	Water	formOfSupplySUSMirri_Water	6
