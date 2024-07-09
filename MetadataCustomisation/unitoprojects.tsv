@@ -1,10 +1,11 @@
 #metadataBlock	name	dataverseAlias	displayName
 	unitoProjects		UNITO Projects Metadata
 #datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	displayoncreate	required	parent	metadatablock_id	termURI
-	susmirri	SUS-MIRRI.IT	SUS-MIRRI.IT project metadata		text	0		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		unitoProjects
-	accessionNumberSUSMirri	Accession Number	Unique identifier of the strain in the CC.		text	0		TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
-	organismTypeSUSMirri	Organism Type	The organism type of the microorganism		text	1		TRUE	TRUE	FALSE	TRUE	FALSE	FALSE	susmirri	unitoProjects
-	genusSUSMirri	Genus	The genus of the strain.		text	2		TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	susmirri	SUS-MIRRI.IT	SUS-MIRRI.IT project metadata		text	0	;	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		unitoProjects
+	accessionNumberSUSMirri	Accession Number	Unique identifier of the strain in the CC.		text	0	<a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	organismTypeSUSMirri	Organism Type	The organism type of the microorganism		text	1	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	TRUE	FALSE	FALSE	susmirri	unitoProjects
+	genusSUSMirri	Genus	The genus of the strain.		text	2	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	speciesSUSMirri	Species	The species of the strain followed, when appropriate, by the subspecies name. For hybrid strains, more than one species can be specified. The semicolon “;” must be used as a separation character.		text	3	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 #controlledVocabulary	DatasetField	Value	identifier	displayOrder
 	organismTypeSUSMirri	Algae	organismAlgaeSUSMirri	0
 	organismTypeSUSMirri	Archaea	organismArchaeaSUSMirri	1
