@@ -18,9 +18,9 @@
 	gmoConstructionInfoSUSMirri	GMO Construction Info	Information on the construction of the GMO. This information is mandatory for strains with GMO=Yes, while it must be missing for strains with GMO=No.		text	13	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 	dualUseSUSMirri	Dual Use	The attribute specifies whether the strain has the potential for a harmful use according to EU Council Regulation 2000/1334/CE and its amendments and corrections. Mandatory if the species is known.		text	14	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 	sexualStateSUSMirri	Sexual State	The attribute specifies Information on strain sexual state / mating type, for relevant resource types.		text	15	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
-	testedTempGrowthRangeSUSMirri	Tested Temp Growth Range	The attribute specifies the lowest and the highest temperature at which the strain was tested for growing. Temperatures are expressed as integer numbers in Celsius degrees. The symbol ° and the letter C must not be included.		none	16		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	susmirri	unitoProjects
-	minTestedTempGrowthRangeSUSMirri	Minimum			int	0		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	testedTempGrowthRangeSUSMirri	unitoProjects	
-	maxTestedTempGrowthRangeSUSMirri	Maximum			int	1		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	testedTempGrowthRangeSUSMirri	unitoProjects	
+	testedTempGrowthRangeSUSMirri	Tested Temp Growth Range	The attribute specifies the lowest and the highest temperature at which the strain was tested for growing. Temperatures are expressed as integer numbers in Celsius degrees and must be separated by a semicolon. The symbol ° and the letter C must not be included.		text	16	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	typeStrainSUSMirri	Type Strain	The attribute specifies whether the strain is a type strain.		text	17	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	collectionDateSUSMirri	Collection Date	Date when the sample was collected. This attribute is mandatory if BeforeNagoya is ‘No’. Date can be just the year, the year and the month, and a full date		text	17	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 #controlledVocabulary	DatasetField	Value	identifier	displayOrder
 	organismTypeSUSMirri	Algae	organismTypeSUSMirri_Algae	0
 	organismTypeSUSMirri	Archaea	organismTypeSUSMirri_Archaea	1
@@ -68,3 +68,5 @@
 	sexualStateSUSMirri	MAT2	sexualStateSUSMirri_MAT2	11
 	sexualStateSUSMirri	MT+	sexualStateSUSMirri_MT+	12
 	sexualStateSUSMirri	MT-	sexualStateSUSMirri_MT-	13
+	typeStrainSUSMirri	Yes	typeStrainSUSMirri_Yes	0
+	typeStrainSUSMirri	No	typeStrainSUSMirri_No	1
