@@ -1,7 +1,7 @@
 #metadataBlock	name	dataverseAlias	displayName
 	unitoProjects		UNITO Projects Metadata
 #datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	displayoncreate	required	parent	metadatablock_id	termURI
-	susmirri	SUS-MIRRI.IT	SUS-MIRRI.IT project metadata		text	0	;	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		unitoProjects
+	susmirri	SUS-MIRRI.IT	SUS-MIRRI.IT project metadata		none	0	;	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		unitoProjects
 	accessionNumberSUSMirri	Accession Number	Unique identifier of the strain in the CC.		text	0	<a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 	organismTypeSUSMirri	Organism Type	The organism type of the microorganism		text	1	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	TRUE	FALSE	FALSE	susmirri	unitoProjects
 	genusSUSMirri	Genus	The genus of the strain.		text	2	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
@@ -12,6 +12,15 @@
 	riskGroupSUSMirri	Risk Group	Risk group according to EU Directive 2000/54/EC and its amendments and corrections. Mandatory if the species is known.		text	7	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 	formOfSupplySUSMirri	Form Of Supply	The forms of supply of the strain to users.		text	8	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	TRUE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 	recommendedMediumGrowthSUSMirri	Recommended Medium Growth	The acronym of the growth medium.		text	9	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	TRUE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	recommendedTempGrowthSUSMirri	Recommended Temp Growth	The recommended growing temperature for the strain. The temperature is expressed as an integer number in Celsius degrees. The symbol ° and the letter C must not be included.		int	10	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	euQuarantineSUSMirri	EU Quarantine	The attribute specifies whether the strain is subject to quarantine according to the European Directive 2000/29/CE and its amendments and corrections. The list of quarantine organisms is available in the Commission Implementing Regulation (EU) 2019/2072. Mandatory if the species is known.		text	11	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	gmoSUSMirri	GMO	The attribute specifies whether the strain is a GMO (Genetically Modified Organism).		text	12	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	gmoConstructionInfoSUSMirri	GMO Construction Info	Information on the construction of the GMO. This information is mandatory for strains with GMO=Yes, while it must be missing for strains with GMO=No.		text	13	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	dualUseSUSMirri	Dual Use	The attribute specifies whether the strain has the potential for a harmful use according to EU Council Regulation 2000/1334/CE and its amendments and corrections. Mandatory if the species is known.		text	14	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	sexualStateSUSMirri	Sexual State	The attribute specifies Information on strain sexual state / mating type, for relevant resource types.		text	15	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	testedTempGrowthRangeSUSMirri	Tested Temp Growth Range	The attribute specifies the lowest and the highest temperature at which the strain was tested for growing. Temperatures are expressed as integer numbers in Celsius degrees. The symbol ° and the letter C must not be included.		none	16		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE		unitoProjects
+	minTestedTempGrowthRangeSUSMirri	Minimum			int	0		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	testedTempGrowthRangeSUSMirri	unitoProjects	
+	maxTestedTempGrowthRangeSUSMirri	Maximum			int	1		FALSE	FALSE	FALSE	FALSE	TRUE	FALSE	testedTempGrowthRangeSUSMirri	unitoProjects	
 #controlledVocabulary	DatasetField	Value	identifier	displayOrder
 	organismTypeSUSMirri	Algae	organismTypeSUSMirri_Algae	0
 	organismTypeSUSMirri	Archaea	organismTypeSUSMirri_Archaea	1
@@ -39,3 +48,23 @@
 	formOfSupplySUSMirri	Lyo	formOfSupplySUSMirri_Lyo	4
 	formOfSupplySUSMirri	Oil	formOfSupplySUSMirri_Oil	5
 	formOfSupplySUSMirri	Water	formOfSupplySUSMirri_Water	6
+	euQuarantineSUSMirri	Yes	euQuarantineSUSMirri_Yes	0
+	euQuarantineSUSMirri	No	euQuarantineSUSMirri_No	1
+	gmoSUSMirri	Yes	gmoSUSMirri_Yes	0
+	gmoSUSMirri	No	gmoSUSMirri_No	1
+	dualUseSUSMirri	Yes	dualUseSUSMirri_Yes	0
+	dualUseSUSMirri	No	dualUseSUSMirri_No	1
+	sexualStateSUSMirri	Mata	sexualStateSUSMirri_Mata	0
+	sexualStateSUSMirri	Matalpha	sexualStateSUSMirri_Matalpha	1
+	sexualStateSUSMirri	Mata/Matalpha	sexualStateSUSMirri_MataMatalpha	2
+	sexualStateSUSMirri	Matb	sexualStateSUSMirri_Matb	3
+	sexualStateSUSMirri	Mata/Matb	sexualStateSUSMirri_MataMatb	4
+	sexualStateSUSMirri	MTLa	sexualStateSUSMirri_MTLa	5
+	sexualStateSUSMirri	MTLalpha	sexualStateSUSMirri_MTLalpha	6
+	sexualStateSUSMirri	MTLa/MTLalpha	sexualStateSUSMirri_MTLaMTLalpha	7
+	sexualStateSUSMirri	MAT1-1	sexualStateSUSMirri_MAT1-1	8
+	sexualStateSUSMirri	MAT1-2	sexualStateSUSMirri_MAT1-2	9
+	sexualStateSUSMirri	MAT1	sexualStateSUSMirri_MAT1	10
+	sexualStateSUSMirri	MAT2	sexualStateSUSMirri_MAT2	11
+	sexualStateSUSMirri	MT+	sexualStateSUSMirri_MT+	12
+	sexualStateSUSMirri	MT-	sexualStateSUSMirri_MT-	13
