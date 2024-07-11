@@ -7,8 +7,16 @@ def createDataset(args):
 	json_file = args.json
 	dataverse = args.dataverse
 	datafile_dir = args.datafile_dir
+	token = args.token
+	base_url = args.base_url
 
-	dataverse_controller = DataverseController(constant.base_url, constant.token)
+	if not token:
+		token = constant.token
+
+	if not base_url:
+		base_url = constant.base_url
+
+	dataverse_controller = DataverseController(base_url, token)
 
 	with open(json_file, 'r') as file:
 		values = json.load(file)

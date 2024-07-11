@@ -1,0 +1,42 @@
+{
+  "dataset_title": "B",
+  "author_name": "A",
+  "author_affiliation": "A",
+  "dataset_contact_name": "A",
+  "dataset_contact_email": "email@email.com",
+  "dataset_description": "A",
+  "subject": ["Medicine, Health and Life Sciences"],
+  "metadatablocks": [
+    {
+      "display_name": "UNITO Metadata",
+      "name": "unito",
+      "fields": [
+        {
+          "typeName": "ERC",
+          "value": "SH1_1 Macroeconomics; monetary economics; economic growth",
+          "multiple": false,
+          "typeClass": "controlledVocabulary"
+        }
+      ]
+    },
+    {
+      "display_name": "UNITO Projects Metadata",
+      "name": "unitoProjects",
+      "fields": [
+        {
+          "typeName": "susmirri",
+          "multiple": false,
+          "typeClass": "compound",
+          "value": {
+            "accessionNumberSUSMirri": {
+              "typeName": "accessionNumberSUSMirri",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "EMCC 0001"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

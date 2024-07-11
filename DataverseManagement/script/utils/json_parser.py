@@ -20,15 +20,13 @@ def json_to_file(json_data, filename):
 # 6. save_json(self, write): return the json object (optionally, save the json file)
 class Json:
     def __init__(self, values):
-        self.accession_number = None
-        self.collection = None
-        self.strain_id = None
         self.dataset_title = values['dataset_title']
         self.author_name = values['author_name']
         self.author_affiliation = values['author_affiliation']
         self.dataset_contact_name = values['dataset_contact_name']
         self.dataset_contact_email = values['dataset_contact_email']
         self.ds_description = values['dataset_description']
+        self.metadatablocks = values['metadatablocks'] if 'metadatablocks' in values.keys() else []
         #self.subject = values['subject']  # this param should be an array
 
     def add_strain(self, values):
@@ -64,13 +62,20 @@ class Json:
 
         return {'fields': [title, author, dataset_contact, ds_description, subject],
                 'displayName': 'Citation Metadata'}
+    
 
-    # TODO it is possible to generalize this method in order to add strains only if there are strains parameters
+    def add_metadatablock(self, dataset, metadata_block, metadata_block_name):
+        metadata = dataset['metadataBlocks']       
+        metadata[metadata_block_name] = metadata_block
+        return {'metadataBlocks': metadata}
+        
     def parsing_dataset(self):
         # metadata_block = {'citation': self.citation_metadata(), 'strains': self.strains_metadata()}
         metadata_block = {'citation': self.citation_metadata()}
         dataset_version = {'metadataBlocks': metadata_block}
-        #return {'metadataLanguage': 'en', 'datasetVersion': dataset_version}
+        for elem in self.metadatablocks:
+            dataset_version = self.add_metadatablock(dataset_version, {"displayName": elem['display_name'], "fields": elem['fields']}, elem['name'])
+		#return {'metadataLanguage': 'en', 'datasetVersion': dataset_version}
         return {'datasetVersion': dataset_version}
 
     def save_json(self, write=False):

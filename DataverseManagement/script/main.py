@@ -6,6 +6,11 @@ import mainOperations.add_datafile_dataset as add_datafile_dataset
 import mainOperations.remove_datafile_dataset as remove_datafile_dataset
 import sys
 
+def getDataverseInformation(parser):
+    parser.add_argument('--token', required=False, help='Token for API access')
+    parser.add_argument('--base_url', required=False, help='Base url of dataverse istance')
+    return parser
+
 def createDataverse(params):
     parser = argparse.ArgumentParser(description="Create a dataverse in a dataverse instance.")
     parser.add_argument('--dataverse', required=True, help='Dataverse Json file')
@@ -18,6 +23,7 @@ def createDataset(params):
     parser.add_argument('--json', required=True, help='Json file')
     parser.add_argument('--datafile_dir', required=False, help='Datafile directory')
     parser.add_argument('--dataverse', required=True, help='Dataverse name')
+    parser = getDataverseInformation(parser)
     
     args = parser.parse_args(params)
     create_dataset.createDataset(args)
