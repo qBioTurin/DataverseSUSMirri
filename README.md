@@ -17,3 +17,6 @@ curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=collection1" | j
 ```
 
 ## Dataverse management
+
+
+## SUSMirri Parsing Data
