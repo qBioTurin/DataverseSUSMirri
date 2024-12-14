@@ -20,6 +20,7 @@
 	sexualStateSUSMirri	Sexual State	The attribute specifies Information on strain sexual state / mating type, for relevant resource types.		text	15	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 	testedTempGrowthRangeSUSMirri	Tested Temp Growth Range	The attribute specifies the lowest and the highest temperature at which the strain was tested for growing. Temperatures are expressed as integer numbers in Celsius degrees and must be separated by a semicolon. The symbol ° and the letter C must not be included.		text	16	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 	typeStrainSUSMirri	Type Strain	The attribute specifies whether the strain is a type strain.		text	17	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	TRUE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
+	collectionSUSMirri	Collection	The collection to which a strain belongs.		text	18	<a><br/></a><a style="text-decoration:none; color: black"><b>#NAME</b></a>: #VALUE	TRUE	FALSE	FALSE	FALSE	FALSE	FALSE	susmirri	unitoProjects
 #controlledVocabulary	DatasetField	Value	identifier	displayOrder
 	organismTypeSUSMirri	Algae	organismTypeSUSMirri_Algae	0
 	organismTypeSUSMirri	Archaea	organismTypeSUSMirri_Archaea	1
@@ -37,9 +38,9 @@
 	nagoyaConditionsSUSMirri	Documents providing proof of legal access and terms of use available at the collection	nagoyaConditions_2	1
 	nagoyaConditionsSUSMirri	Strain probably in scope, please contact the culture collection	nagoyaConditions_3	2
 	riskGroupSUSMirri	1	riskGroup_1	0
-	riskGroupSUSMirri	2	riskGroup_1	1
-	riskGroupSUSMirri	3	riskGroup_1	2
-	riskGroupSUSMirri	4	riskGroup_1	3
+	riskGroupSUSMirri	2	riskGroup_2	1
+	riskGroupSUSMirri	3	riskGroup_3	2
+	riskGroupSUSMirri	4	riskGroup_4	3
 	formOfSupplySUSMirri	Agar	formOfSupplySUSMirri_Agar	0
 	formOfSupplySUSMirri	Cryo	formOfSupplySUSMirri_Cryo	1
 	formOfSupplySUSMirri	Dry Ice	formOfSupplySUSMirri_DryIce	2
